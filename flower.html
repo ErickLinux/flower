@@ -6,15 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="estilos.css" />
     <link rel="icon" href="img/flowers.png" type="image/x-icon" />
-    <title>Flower</title>
+    <title>Mi_Adri🥰</title>
   </head>
   <body class="container">
     <audio src="sound/ChristianBasso&HaienQiu-Flowers.mp3" autoplay></audio>
     <div id="lyrics">
      
     </div>
-    <h1 class="titulo">Estas flores amarillas son un reflejo de la alegría que traes a mi vida. <br> <br>
-      Gracias por iluminar mis días con tu presencia.</h1>
+    <h1 class="titulo">Estas flores amarillas son un reflejo de la alegría que trae a mi vida.🌻🌷
+      Gracias por iluminar mis días con su compañia.💫🥰💞</h1>
+      <button id="miBoton">Otro Mes Amandola!💖💑</button>
+      
+
+    
+      
   
     <div class="night"></div>
     <div class="flowers">
@@ -328,5 +333,28 @@
     </div>
     <script src="anim.js"></script>
     <script src="main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const titulo = document.querySelector(".titulo");
+            const miBoton = document.getElementById("miBoton");
+    
+            // Espera a que el título se desvanezca
+            setTimeout(() => {
+                titulo.style.opacity = 0; // Hacer que el texto se desvanezca
+                setTimeout(() => {
+                    miBoton.classList.add("mostrar"); // Mostrar el botón
+                }, 1000); // Esperar a que el texto desaparezca completamente
+            }, 6000); // Mismo tiempo que dura la animación del título
+    
+            // Redireccionar al hacer clic en el botón
+            miBoton.addEventListener("click", function() {
+                window.location.href = "galery.html"; // Reemplaza "tu_pagina.html" con la URL deseada
+            });
+        });
+    </script>
+    
+    
+    
   </body>
 </html>

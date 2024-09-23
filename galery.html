@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            min-height: 100vh; 
+            margin: 0;
+            background: url('https://www.transparenttextures.com/patterns/white-linen.png'), linear-gradient(to bottom, #f3f4f6, #e0e0e0);
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            padding: 20px; 
+            overflow-y: auto; 
+            text-align: center; 
+            position: relative; 
+        }
+
+        h1 {
+            margin: 20px auto; 
+            color: #ff6f61;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 2.5em; 
+            border: 4px solid #ff6f61; 
+            border-radius: 15px; 
+            padding: 10px; 
+            background: rgba(255, 255, 255, 0.8); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+            display: inline-block; 
+            width: fit-content; 
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding-bottom: 20px; 
+            position: relative; 
+            z-index: 1; /* Asegura que la galería esté encima */
+        }
+
+        .photo-frame {
+            position: relative;
+            overflow: hidden;
+            border: 4px solid #ff6f61; 
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.4s;
+        }
+
+        .photo-frame:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .photo-frame:hover .overlay {
+            opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .overlay {
+                font-size: 20px;
+            }
+        }
+
+        /* Estilos para los girasoles flotantes */
+        .sunflower {
+            position: absolute;
+            top: -50px;  
+            animation: float 10s linear infinite;
+            width: 50px;  
+            z-index: 0; /* Asegura que los girasoles estén detrás */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(0);
+                top: -50px;
+            }
+            100% {
+                transform: translateX(0);
+                top: 100vh; /* Cambia para que lleguen al fondo */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Galería de Nuestro Vida🥰😍<br>¡Feliz Aniversario Mor😘! A&E 23/12❤️</h1>
+    <div class="gallery">
+        <div class="photo-frame">
+            <img src="./img/1.jpeg" alt="Foto Bonita 1">
+            <div class="overlay">Nuestra Historia <i class="fas fa-heart"></i></div>
+        </div>
+        <div class="photo-frame">
+            <img src="./img/2.jpeg" alt="Foto Bonita 2">
+            <div class="overlay">Recuerdos inolvidables<i class="fas fa-heart"></i></div>
+        </div>
+        <div class="photo-frame">
+            <img src="./img/6.jpeg" alt="Foto Bonita 3">
+            <div class="overlay">Momentos felices<i class="fas fa-heart"></i></div>
+        </div>
+        <div class="photo-frame">
+            <img src="./img/16.jpeg" alt="Foto Bonita 4">
+            <div class="overlay">Juntos por siempre<i class="fas fa-heart"></i></div>
+        </div>
+        <div class="photo-frame">
+            <img src="./img/14.jpeg" alt="Foto Bonita 5">
+            <div class="overlay">Días especiales <i class="fas fa-heart"></i></div>
+        </div>
+        <div class="photo-frame">
+            <img src="./img/7.jpeg" alt="Foto Bonita 6">
+            <div class="overlay">Siempre a su lado <i class="fas fa-heart"></i></div>
+        </div>
+        <div class="photo-frame">
+            <img src="./img/13.jpeg" alt="Foto Bonita 7">
+            <div class="overlay">Mi Princesa Hermosa<i class="fas fa-heart"></i></div>
+        </div>
+        <div class="photo-frame">
+            <img src="./img/18.jpeg" alt="Foto Bonita 8">
+            <div class="overlay">¡La amo!<i class="fas fa-heart"></i></div>
+        </div>
+    </div>
+
+    <!-- Girasoles flotantes -->
+    <img class="sunflower" src="./img/gi.png" style="left: 10%; animation-delay: 0s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 20%; animation-delay: 2s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 30%; animation-delay: 1s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 40%; animation-delay: 3s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 50%; animation-delay: 1.5s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 60%; animation-delay: 2.5s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 70%; animation-delay: 1.2s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 80%; animation-delay: 0.5s;" alt="Girasol">
+    <img class="sunflower" src="./img/gi.png" style="left: 90%; animation-delay: 3.5s;" alt="Girasol">
+
+</body>
+</html>
